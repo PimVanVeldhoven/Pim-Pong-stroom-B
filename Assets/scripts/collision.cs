@@ -14,13 +14,14 @@ public class collision : MonoBehaviour
     public TMP_Text scoreText;
     public int leftScore = 0;
     public int rightScore = 0;
+    public int winCondition = 5;
 
 
     void resetBall()
     {
         xPosition = 0f;
-        yPosition = 0f;
-        xSpeed = xSpeed * -1.0001f;
+        yPosition = Random.Range(-4f, 4f);
+        xSpeed = xSpeed * -1.000001f;
     }
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,19 @@ public class collision : MonoBehaviour
         xPosition = xPosition + xSpeed * Time.deltaTime;
         yPosition = yPosition + ySpeed * Time.deltaTime;
         transform.position = new Vector3(xPosition, yPosition, 0f);
+
+        if(leftPoints >= winCondition) 
+        {
+            scoreText.text = "Left side wins";
+            xSpeed = 0f;
+            ySpeed = 0f;
+        }
+        else if(rightPoints >= winCondition) 
+        {
+            scoreText.text = "Right side wins";
+            xSpeed = 0f;
+            ySpeed = 0f;
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

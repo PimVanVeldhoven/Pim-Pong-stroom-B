@@ -693,7 +693,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1376087580}
   - component: {fileID: 1376087579}
-  - component: {fileID: 1376087578}
   - component: {fileID: 1376087577}
   m_Layer: 0
   m_Name: pedal right
@@ -747,21 +746,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1376087578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1376087576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7478d4e92d33bcf4e839fa9b46cf2f6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  leftOrRight: right
-  maxValue: 3.8
 --- !u!212 &1376087579
 SpriteRenderer:
   m_ObjectHideFlags: 0

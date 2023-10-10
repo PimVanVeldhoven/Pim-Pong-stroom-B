@@ -8,6 +8,8 @@ TagManager:
   - verticalWall
   - leftVerticalWall
   - rightVerticalWall
+  - scoreTextLeft
+  - scoreTextRight
   layers:
   - Default
   - TransparentFX
