@@ -15,7 +15,7 @@ public class pointsSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreTextLeftPoints = Text.Find("scoreTextLeftPoints");
+        //scoreTextLeftPoints = gameObject.canvas("scoreTextLeftPoints");
     }
 
     // Update is called once per frame

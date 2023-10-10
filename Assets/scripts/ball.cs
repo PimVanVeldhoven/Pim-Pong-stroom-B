@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class ball : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class ball : MonoBehaviour
     public float yPosition = 2f;
     public float xSpeed = 1f;
     public float ySpeed = 1f;
+    
 
     // Start is called before the first frame update
     void Start()

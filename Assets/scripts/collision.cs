@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class collision : MonoBehaviour
 {
@@ -10,7 +11,17 @@ public class collision : MonoBehaviour
     public float ySpeed = 1f;
     public float leftPoints;
     public float rightPoints;
+    public TMP_Text scoreText;
+    public int leftScore = 0;
+    public int rightScore = 0;
 
+
+    void resetBall()
+    {
+        xPosition = 0f;
+        yPosition = 0f;
+        xSpeed = xSpeed * -1.0001f;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -34,15 +45,20 @@ public class collision : MonoBehaviour
         }else if (collision.gameObject.CompareTag("verticalWall")) 
         {
             Debug.Log("bonked from behind");
-            xSpeed = xSpeed * -1f;
+            xSpeed = xSpeed * -1.1f;
         }else if (collision.gameObject.CompareTag("leftVerticalWall")) 
         {
-            Debug.Log("bonked from behind");
-            xSpeed = xSpeed * -1f;
-        }else if (collision.gameObject.CompareTag("rightVerticalWall"))
+            Debug.Log("point scored on left");
+           resetBall();
+            rightPoints++;
+            scoreText.text = leftPoints + " - " + rightPoints;
+        }
+        else if (collision.gameObject.CompareTag("rightVerticalWall"))
         {
-            Debug.Log("bonked from behind");
-            xSpeed = xSpeed * -1f;
+            Debug.Log("point scored on right");
+            resetBall();
+            leftPoints++;
+            scoreText.text = leftPoints + " - " + rightPoints;
         }
     }
 }
