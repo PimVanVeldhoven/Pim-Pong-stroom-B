@@ -8,6 +8,8 @@ public class collision : MonoBehaviour
     public float yPosition = 2f;
     public float xSpeed = 1f;
     public float ySpeed = 1f;
+    public float leftPoints;
+    public float rightPoints;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +33,15 @@ public class collision : MonoBehaviour
             ySpeed = ySpeed * -1f;
         }else if (collision.gameObject.CompareTag("verticalWall")) 
         {
-            Debug.Log("bonked from behind or the front");
+            Debug.Log("bonked from behind");
+            xSpeed = xSpeed * -1f;
+        }else if (collision.gameObject.CompareTag("leftVerticalWall")) 
+        {
+            Debug.Log("bonked from behind");
+            xSpeed = xSpeed * -1f;
+        }else if (collision.gameObject.CompareTag("rightVerticalWall"))
+        {
+            Debug.Log("bonked from behind");
             xSpeed = xSpeed * -1f;
         }
     }

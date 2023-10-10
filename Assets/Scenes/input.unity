@@ -630,8 +630,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xPosition: 2
   yPosition: 2
-  xSpeed: 1
-  ySpeed: 1
+  xSpeed: 2
+  ySpeed: 2
 --- !u!61 &649966262
 BoxCollider2D:
   m_ObjectHideFlags: 0
