@@ -15,15 +15,23 @@ public class collision : MonoBehaviour
     public int leftScore = 0;
     public int rightScore = 0;
     public int winCondition = 5;
+    public int reset;
 
 
-    void resetBall()
+    void resetBall(int reset)
     {
         xPosition = 0f;
         yPosition = Random.Range(-4f, 4f);
-        xSpeed = xSpeed * -1.000001f;
+        if (reset == 2)
+        {
+            xSpeed = -6f;
+        }else if (reset == 1) 
+        {
+            xSpeed = 6f;
+        }
     }
     // Start is called before the first frame update
+
     void Start()
     {
         transform.position = new Vector3(xPosition, yPosition, 0f);
@@ -63,14 +71,14 @@ public class collision : MonoBehaviour
         }else if (collision.gameObject.CompareTag("leftVerticalWall")) 
         {
             Debug.Log("point scored on left");
-           resetBall();
+           resetBall(1);
             rightPoints++;
             scoreText.text = leftPoints + " - " + rightPoints;
         }
         else if (collision.gameObject.CompareTag("rightVerticalWall"))
         {
             Debug.Log("point scored on right");
-            resetBall();
+            resetBall(2);
             leftPoints++;
             scoreText.text = leftPoints + " - " + rightPoints;
         }
