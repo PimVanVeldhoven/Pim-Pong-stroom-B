@@ -827,7 +827,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yPosition: 0
-  ySpeed: 0
+  ySpeed: 2
+  maxPos: 3.8
 --- !u!1 &1450227939
 GameObject:
   m_ObjectHideFlags: 0
