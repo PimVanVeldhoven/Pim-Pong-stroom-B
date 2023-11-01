@@ -18,4 +18,8 @@ public class loadScene : MonoBehaviour
     {
         SceneManager.LoadScene("ownMultiplayer");
     }
+    public void quitGame()
+    {
+        Application.Quit();
+    }
 }
