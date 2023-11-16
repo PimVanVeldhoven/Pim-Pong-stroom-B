@@ -6,6 +6,10 @@ using UnityEngine.EventSystems;
 
 public class loadScene : MonoBehaviour
 {
+    /// <summary>
+    /// The code for loading different scenes in the start menu 
+    /// it looks at wich button is pressed and plays the public void thats connected to it
+    /// </summary>
     public void singlePlayer()
     {
         SceneManager.LoadScene("ownVersion");

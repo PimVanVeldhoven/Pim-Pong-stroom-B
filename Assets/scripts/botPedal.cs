@@ -5,6 +5,10 @@ using UnityEngine.UIElements;
 
 public class botPedal : MonoBehaviour
 {
+    /// <summary>
+    /// the code for the pedal in 1 player mode so the pedal moves by its self it also has a max position so it dusnt
+    /// go outside the borders of the game
+    /// </summary>
     
     public float yPosition = 0f;
     public float ySpeed = 1f;
@@ -19,6 +23,7 @@ public class botPedal : MonoBehaviour
     //Update is called once per frame
     void Update()
     {
+        //the movement of the pedal and it also checks if its past its max position
         yPosition = yPosition + ySpeed * Time.deltaTime;
         transform.position = new Vector3(transform.position.x, yPosition, 0f);
         yPosition = transform.position.y;
@@ -26,25 +31,5 @@ public class botPedal : MonoBehaviour
         {
             ySpeed = ySpeed * -1f;
         }
-
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //if (yPosition <= maxPos)
-        //{
-        //    ySpeed = ySpeed * -1f;
-        //}
-        //else if (yPosition >= -maxPos)
-        //{
-        //    ySpeed = ySpeed * -1f;
-        //}
-        //else
-        //{
-        //    yPosition = yPosition + ySpeed * Time.deltaTime;
-        //    transform.position = new Vector3(transform.position.x, yPosition, 0f);
-        //    yPosition = transform.position.y;
-        //}
-
-    }
-    
+    }    
 }

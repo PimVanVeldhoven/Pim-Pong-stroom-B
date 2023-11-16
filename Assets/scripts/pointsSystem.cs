@@ -5,10 +5,15 @@ using UnityEngine.UI;
 
 public class pointsSystem : MonoBehaviour
 {
+    /// <summary>
+    /// the code that actually displays the score so the players can see there points
+    /// it shows both sides there points
+    /// </summary>
     public string leftOrRightWall;
     public int leftPoints;
     public int rightPoints;
 
+    //makes the text field able to show a score that can be updated
     [SerializeField]
     Text scoreTextLeft;
     public Text scoreTextLeftPoints;
@@ -21,12 +26,13 @@ public class pointsSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //the code that updates the score on the screen
         leftPoints = PlayerPrefs.GetInt("SCORE: ", 0);
         scoreTextLeftPoints.text = "SCORE: " + leftPoints.ToString();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        //the code that updates the score after a point is scored so its actually counted for the wincondition etc
         if (collision.gameObject.CompareTag("leftVerticalWall"))
         {
             Debug.Log("bonked from behind");

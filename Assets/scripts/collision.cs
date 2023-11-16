@@ -5,6 +5,11 @@ using TMPro;
 
 public class collision : MonoBehaviour
 {
+    /// <summary>
+    /// the code thats used for the ball collision detection score counter and wincondition
+    /// the ball has the basic program for movement like ball.cs but this time with collision detection
+    /// then we have a score counter wich displays the score and a wincondition
+    /// </summary>
     public float xPosition = 2f;
     public float yPosition = 2f;
     public float xSpeed = 1f;
@@ -17,7 +22,7 @@ public class collision : MonoBehaviour
     public int winCondition = 5;
     public int reset;
 
-
+    //code for making ball respawn at a random place on the middle line
     void resetBall(int reset)
     {
         xPosition = 0f;
@@ -33,13 +38,15 @@ public class collision : MonoBehaviour
     // Start is called before the first frame update
 
     void Start()
-    {
+    {   
+        //the spawning of the ball at the start
         transform.position = new Vector3(xPosition, yPosition, 0f);
     }
 
     // Update is called once per frame
     void Update()
     {
+        //the movement with the wincondition
         xPosition = xPosition + xSpeed * Time.deltaTime;
         yPosition = yPosition + ySpeed * Time.deltaTime;
         transform.position = new Vector3(xPosition, yPosition, 0f);
@@ -59,6 +66,9 @@ public class collision : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //the code that registers a collision and tells what kind of collision so it bounces in the way it should
+        //for instance if it hits the bottum wall it dusnt change its left right direction but its up down so it stays
+        //in the field would be weird if the ball dissapears mid game
         Debug.Log("Boink!");
         if (collision.gameObject.CompareTag("horizontalWall")) 
         {
